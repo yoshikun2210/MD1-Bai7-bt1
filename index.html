@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h2>Tính chỉ số BMI </h2>
+
+<p>Cân nặng</p>
+<input type="text" id="weight"> KG
+
+<p>Chiều cao</p>
+<input type="text" id="height"> m <br><br>
+
+<button onclick="result()">Kết quả</button>
+
+<p id="result">Result: </p>
+<script>
+    function result() {
+        let weight = +document.getElementById('weight').value;
+        let height = +document.getElementById('height').value;
+        let bmi = weight / (height * height)
+
+        if (bmi < 18){
+
+            document.getElementById('result').innerText = "Result: thiếu câ";
+
+        } else if (bmi < 25.0) {
+
+            document.getElementById('result').innerText = "Result: Bình thường";
+
+        } else if (bmi < 30.0) {
+
+            document.getElementById('result').innerText = "Result: thừa cân";
+
+        } else {
+
+            document.getElementById('result').innerText = "Result: béo phì";
+
+        }
+    }
+
+</script>
+</body>
+</html>
